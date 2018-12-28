@@ -55,9 +55,6 @@ export default class HomeScreen extends React.Component {
   render() {
       return (
       <View style={styles.container}>
-      <View>
-        <TextInput>   </TextInput>
-      </View>
         <MapView
             style={styles.container} 
             initialRegion={{
@@ -74,6 +71,15 @@ export default class HomeScreen extends React.Component {
               />
             ))}                      
           </MapView>
+          <View style={{height: 60, width:'100%', position:'absolute', top:40 }}>
+          <TextInput
+            style={{ marginLeft:'15%', paddingLeft:10, paddingRight:10, height:40, marginRight:'15%', width:'70%', borderColor: 'lightgray', backgroundColor:'rgba(255, 255, 255, 0.9)', borderWidth: 1, borderRadius:15}}
+            onChangeText={(text) => this.setState({input: text})}
+          />
+          <View style={{height:20, width:20, position:'absolute', top:10, right:'17%', backgroundColor:'rgba(200,100,100,0.5)', borderRadius:20 }}/>
+
+        </View>  
+
       </View>
     );
   }
